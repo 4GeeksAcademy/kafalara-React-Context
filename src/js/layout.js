@@ -5,10 +5,14 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
+import NuevoContacto from "./views/NuevoContacto";
+import EditarContacto from "./views/EditarContacto";
 import injectContext from "./store/appContext";
+
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+
 
 //create your first component
 const Layout = () => {
@@ -25,6 +29,10 @@ const Layout = () => {
 						<Route path="/" element={<Home />} />
 						<Route path="/demo" element={<Demo />} />
 						<Route path="/single/:theid" element={<Single />} />
+						{/* Ruta para agregar un nuevo contacto */}
+						<Route path="/nuevo-contacto" element={<NuevoContacto/>} />
+						{/* Ruta para editar un contacto*/}
+						<Route path="/editar-contacto/:contactId" element={<EditarContacto/>} />
 						<Route path="*" element={<h1>Not found!</h1>} />
 					</Routes>
 					<Footer />
